@@ -52,10 +52,17 @@ body {
   background: #2a5a9e;
 }
 
+.nav-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
 /* Sur mobile (écran étroit/haut), la photo panoramique ne correspond pas au
    format de l'écran : on utilise une variante recomposée en format portrait
    (ciel/mer prolongés au-dessus et en dessous) pour un vrai fond plein écran,
-   et les cartes accueil/contact sont réduites de 20%. */
+   et les cartes (images de page) sont réduites de 20%. */
 @media (max-aspect-ratio: 4/5) {
   .hero {
     background-image: linear-gradient(rgba(10, 20, 40, 0.15), rgba(10, 20, 40, 0.15)), url("assets/fond-mobile.jpg");
