@@ -1,8 +1,9 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  color: #16264a;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #000000;
 }
 
 .sr-only {
@@ -67,6 +68,19 @@ body {
   gap: 0.6rem;
   width: 100%;
   max-width: 900px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Onglet Accueil : l'image couvre tout l'écran, la barre d'onglets
+   reste visible par-dessus. */
+.poster-full {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1;
 }
 
 .tab-btn {
@@ -77,7 +91,7 @@ body {
   padding: 0.6rem 1.2rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.75);
-  color: #1b3f7a;
+  color: #000000;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
@@ -112,10 +126,10 @@ button.cta {
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
-  background: #fdfcf8;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
+  border-radius: 14px;
 }
 
 .doc-strip {
@@ -125,17 +139,104 @@ button.cta {
 }
 
 .doc-body {
-  padding: 1.5rem 6vw 2.5rem;
+  padding: 2rem 6vw 2.5rem;
 }
 
-.doc-body h2 {
-  color: #1b3f7a;
+.doc-title {
+  color: #000000;
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+.doc-tagline {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 1.4rem;
+}
+
+/* Accordéon : chaque section se déplie/replie au clic, pour aérer
+   les pages denses en texte au lieu d'un long bloc continu. */
+.accordion {
+  margin: 0.9rem 0;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+
+.accordion summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.9rem 1.1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion summary::after {
+  content: '+';
   font-size: 1.3rem;
-  margin: 1.6rem 0 0.6rem;
+  font-weight: 700;
+  flex-shrink: 0;
 }
 
-.doc-body h2:first-child {
-  margin-top: 0.4rem;
+.accordion[open] summary::after {
+  content: '\2212';
+}
+
+.accordion .accordion-body {
+  padding: 0 1.1rem 1.1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.accordion-img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.accordion-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.accordion-text > *:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 560px) {
+  .accordion .accordion-body {
+    flex-direction: column;
+  }
+
+  .accordion-img {
+    width: 100%;
+    height: 130px;
+  }
+}
+
+.price-badge {
+  display: inline-block;
+  background: #1b3f7a;
+  color: #fff;
+  padding: 0.15rem 0.65rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .doc-intro {
