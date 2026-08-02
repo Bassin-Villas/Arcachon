@@ -14,27 +14,28 @@
 <main class="hero tabs-hero">
 
   <nav class="tab-bar">
-    <button class="tab-btn active" data-tab="accueil">Accueil</button>
-    <button class="tab-btn" data-tab="conciergerie">Conciergerie</button>
-    <button class="tab-btn" data-tab="intendance-villas">Intendance Villas</button>
+    <button class="tab-btn active" data-tab="accueil" data-i18n="tab-accueil">Accueil</button>
+    <button class="tab-btn" data-tab="conciergerie" data-i18n="tab-conciergerie">Conciergerie</button>
+    <button class="tab-btn" data-tab="intendance-villas" data-i18n="tab-intendance">Intendance Villas</button>
+    <button class="lang-btn" id="lang-toggle">EN</button>
   </nav>
 
   <div class="tab-panel active" id="accueil">
     <img class="poster-full" src="assets/accueil.jpg" alt="Bassin-Villas — Conciergerie, prestation de services. Vue de la dune du Pyla et du Bassin d'Arcachon.">
-    <h1 class="sr-only">Bassin-Villas — Conciergerie, prestation de services</h1>
+    <h1 class="sr-only" data-i18n="accueil-h1">Bassin-Villas — Conciergerie, prestation de services</h1>
   </div>
 
   <div class="tab-panel" id="conciergerie">
     <div class="doc-page">
       <div class="doc-body">
-        <h1 class="doc-title">Services de Conciergerie</h1>
-        <p class="doc-tagline">Tarifs et prestations de gestion locative</p>
+        <h1 class="doc-title" data-i18n="conciergerie-title">Services de Conciergerie</h1>
+        <p class="doc-tagline" data-i18n="conciergerie-tagline">Tarifs et prestations de gestion locative</p>
 
         <details class="accordion">
-          <summary>1. Notre Formule "Gestion Complète" (Clé en main)</summary>
+          <summary data-i18n="acc1-summary">1. Notre Formule "Gestion Complète" (Clé en main)</summary>
           <div class="accordion-body">
             <img class="accordion-img" src="assets/icons/img-gestion-complete.jpg" alt="Boîte à clés sécurisée pour la remise des clés">
-            <div class="accordion-text">
+            <div class="accordion-text" data-i18n-html="acc1-body">
               <p class="doc-intro"><em>La solution idéale pour déléguer 100% et maximiser vos revenus locatifs l'esprit serein.</em></p>
               <p>Notre Commission : <span class="price-badge">20 % TTC</span> <em>(Calculée uniquement sur le montant des revenus locatifs générés)</em></p>
               <p>Ce qui est inclus dans notre formule :</p>
@@ -51,10 +52,10 @@
         </details>
 
         <details class="accordion">
-          <summary>2. Nos Prestations « A la Carte »</summary>
+          <summary data-i18n="acc2-summary">2. Nos Prestations « A la Carte »</summary>
           <div class="accordion-body">
             <img class="accordion-img" src="assets/icons/img-prestations-carte.jpg" alt="Chambre d'hôtel avec linge propre et serviettes fraîches">
-            <div class="accordion-text">
+            <div class="accordion-text" data-i18n-html="acc2-body">
               <p class="doc-intro"><em>Vous gérez vos annonces à distance et souhaitez un relais de confiance sur place ? Choisissez nos services au forfait.</em></p>
 
               <p class="doc-subhead">Accueil &amp; Logistique</p>
@@ -82,13 +83,13 @@
   <div class="tab-panel" id="intendance-villas">
     <div class="doc-page">
       <div class="doc-body">
-        <h1 class="doc-title">Proposition d'Intendance &amp; Vigilance Immobilière Villas</h1>
+        <h1 class="doc-title" data-i18n="intendance-title">Proposition d'Intendance &amp; Vigilance Immobilière Villas</h1>
 
         <details class="accordion">
-          <summary>Pourquoi choisir ma prestation ?</summary>
+          <summary data-i18n="acc3-summary">Pourquoi choisir ma prestation ?</summary>
           <div class="accordion-body">
             <img class="accordion-img" src="assets/icons/img-pourquoi-choisir.jpg" alt="Port de plaisance sur le Bassin d'Arcachon">
-            <div class="accordion-text">
+            <div class="accordion-text" data-i18n-html="acc3-body">
               <ul class="doc-list">
                 <li>Ancrage Local : Résident à Arcachon, proximité immédiate et intervention rapide.</li>
                 <li>Expérience opérationnelle : maîtrise de la gestion de copropriété et de volumes importants</li>
@@ -98,10 +99,10 @@
         </details>
 
         <details class="accordion">
-          <summary>La Surveillance et Vigilance (Le cœur du contrat)</summary>
+          <summary data-i18n="acc4-summary">La Surveillance et Vigilance (Le cœur du contrat)</summary>
           <div class="accordion-body">
             <img class="accordion-img" src="assets/icons/img-surveillance.jpg" alt="Caméra de surveillance extérieure">
-            <div class="accordion-text">
+            <div class="accordion-text" data-i18n-html="acc4-body">
               <ul class="doc-list">
                 <li>Passages réguliers : 1 à 2 fois par semaine pour vérifier l'état général (intérieur/extérieur).</li>
                 <li>Après intempéries : Passage systématique après un coup de vent ou un gros orage (très fréquent sur le Bassin) pour vérifier les toitures, les baies vitrées et les infiltrations.</li>
@@ -113,10 +114,10 @@
         </details>
 
         <details class="accordion">
-          <summary>La Gestion de la Maintenance (Le « Chef d'orchestre »)</summary>
+          <summary data-i18n="acc5-summary">La Gestion de la Maintenance (Le « Chef d'orchestre »)</summary>
           <div class="accordion-body">
             <img class="accordion-img" src="assets/icons/img-maintenance.jpg" alt="Outils de jardinage et brouette">
-            <div class="accordion-text">
+            <div class="accordion-text" data-i18n-html="acc5-body">
               <ul class="doc-list">
                 <li>Suivi des contrats : Entreprises espaces verts, jardinage / Suivi entretien pisciniste, Maintenance sécurité et protection (Entreprises d'alarme) etc.</li>
                 <li>Accueil des artisans : Ouverture de la porte, surveillance des travaux de réparation et vérification du chantier avant le départ de l'artisan.</li>
@@ -127,10 +128,10 @@
         </details>
 
         <details class="accordion">
-          <summary>Forfait base Mensuel « Sérénité &amp; Vigilance »</summary>
+          <summary data-i18n="acc6-summary">Forfait base Mensuel « Sérénité &amp; Vigilance »</summary>
           <div class="accordion-body">
             <img class="accordion-img" src="assets/icons/img-serenite.jpg" alt="Coucher de soleil calme sur la plage, ambiance sereine">
-            <div class="accordion-text">
+            <div class="accordion-text" data-i18n-html="acc6-body">
               <p>Tarif mensuel indicatif basé sur la superficie du bien : <span class="price-badge">450 € à 650 €</span></p>
               <p>Ce forfait fixe garantit la sécurité et le maintien en état du patrimoine tout au long de l'année.</p>
               <ul class="doc-list">
@@ -144,10 +145,10 @@
         </details>
 
         <details class="accordion">
-          <summary>Service de la conciergerie (Le « Luxe »)</summary>
+          <summary data-i18n="acc7-summary">Service de la conciergerie (Le « Luxe »)</summary>
           <div class="accordion-body">
             <img class="accordion-img" src="assets/icons/img-luxe.jpg" alt="Terrasse et piscine d'une villa haut de gamme">
-            <div class="accordion-text">
+            <div class="accordion-text" data-i18n-html="acc7-body">
               <ul class="doc-list">
                 <li>Forfait par intervention pour la mise en service complète du bien avant arrivée : <span class="price-badge">85 € à 140 €</span>
                   <br><em>Ouverture des volets, mise en route chauffage/climatisation, mise en place mobilier extérieur, liste de courses de bienvenue sur mesure (montant des achats facturé au réel sur présentation de justificatifs).</em>
@@ -161,10 +162,10 @@
         </details>
 
         <details class="accordion">
-          <summary>Prestations Techniques (à la demande)</summary>
+          <summary data-i18n="acc8-summary">Prestations Techniques (à la demande)</summary>
           <div class="accordion-body">
             <img class="accordion-img" src="assets/icons/img-technique.jpg" alt="Intervention technique professionnelle à la perceuse">
-            <div class="accordion-text">
+            <div class="accordion-text" data-i18n-html="acc8-body">
               <p>Ces prestations sont facturées en sus du forfait de base.</p>
               <ul class="doc-list">
                 <li>Entretien et Nettoyage facturé à l'heure : <span class="price-badge">35 € à 40 €</span>
@@ -204,6 +205,67 @@
 
   var initial = window.location.hash.replace('#', '');
   if (initial) activateTab(initial);
+
+  var translations = {
+    en: {
+      'tab-accueil': 'Home',
+      'tab-conciergerie': 'Concierge',
+      'tab-intendance': 'Villa Management',
+      'accueil-h1': 'Bassin-Villas — Concierge, property services',
+      'conciergerie-title': 'Concierge Services',
+      'conciergerie-tagline': 'Rates and rental management services',
+      'acc1-summary': '1. Our "Full Management" Package (Turnkey)',
+      'acc1-body': '<p class="doc-intro"><em>The ideal solution to fully delegate and maximise your rental income with peace of mind.</em></p><p>Our Commission: <span class="price-badge">20% incl. VAT</span> <em>(Calculated only on the rental income generated)</em></p><p>What’s included in our package:</p><ul class="doc-list"><li>📷 Property showcasing: Photo shoot and optimised listing copywriting.</li><li>🌐 Multi-channel distribution: Publishing and calendar syncing across leading platforms (Airbnb, Booking.com, Abritel).</li><li>📈 Yield Management: Dynamic pricing based on seasonality and local events.</li><li>💬 Guest relations 7/7: Booking management, answering questions and assistance during the stay.</li><li>🔑 Check-in and Check-out: Managing entries (in person or connected locks) and check-out with property inspection.</li><li>🧺 Cleaning coordination: Scheduling professional cleaning and linen service between each guest.</li></ul>',
+      'acc2-summary': '2. Our "On-Demand" Services',
+      'acc2-body': '<p class="doc-intro"><em>Managing your listings remotely and need a trusted local partner? Choose our services on demand.</em></p><p class="doc-subhead">Check-in &amp; Logistics</p><ul class="doc-list"><li><strong>Check-in only</strong> (Key handover + welcome booklet): <span class="price-badge">from €35</span></li><li><strong>Check-out only</strong> (Property inspection + key collection): <span class="price-badge">from €30</span></li><li><strong>Check-in &amp; Check-out Pack</strong> (Same day): <span class="price-badge">from €60</span></li><li><strong>Emergency call-out / Repair</strong> (Parts not included): <span class="price-badge">€45 / hour</span></li></ul><p class="doc-subhead">Cleaning &amp; Linen</p><p class="doc-intro"><em>Rates vary according to property size (Studio to Villa).</em></p><ul class="doc-list"><li><strong>Professional Cleaning Package</strong>: <span class="price-badge">€50 to €150</span> <em>(Usually charged to the guest)</em></li><li><strong>Linen rental</strong> (Double bed kit + towels): <span class="price-badge">€27 / bed</span></li><li><strong>Low-season watch / Caretaking</strong> (2 visits per month): <span class="price-badge">€80 / month</span></li></ul>',
+      'intendance-title': 'Villa Property Management &amp; Watch Service Proposal',
+      'acc3-summary': 'Why choose my service?',
+      'acc3-body': '<ul class="doc-list"><li>Local presence: Resident in Arcachon, immediate proximity and fast response.</li><li>Operational experience: skilled in managing co-ownerships and large-scale portfolios</li></ul>',
+      'acc4-summary': 'Surveillance and Watch (The core of the service)',
+      'acc4-body': '<ul class="doc-list"><li>Regular visits: 1 to 2 times a week to check the general condition (inside/outside).</li><li>After bad weather: Systematic visit after strong wind or a storm (very common on the Bassin) to check roofs, windows and possible water infiltration.</li><li>Airing out: Opening windows to prevent damp and the "stuffy" smell typical of seaside homes.</li><li>Mail collection: Forwarding or handling urgent bills/notices.</li></ul>',
+      'acc5-summary': 'Maintenance Management (The "Conductor")',
+      'acc5-body': '<ul class="doc-list"><li>Contract follow-up: Landscaping/gardening companies, pool maintenance follow-up, security and alarm companies, etc.</li><li>Contractor supervision: Letting tradespeople in, overseeing repair work and checking the job before the tradesperson leaves.</li><li>Minor maintenance: Changing a light bulb, checking the heating works properly before winter. <em>(Quote on request)</em></li></ul>',
+      'acc6-summary': 'Monthly Base Package "Peace of Mind &amp; Watch"',
+      'acc6-body': '<p>Indicative monthly rate based on property size: <span class="price-badge">€450 to €650</span></p><p>This fixed package guarantees the security and upkeep of your property all year round.</p><ul class="doc-list"><li>Weekly watch: Visit once a week (access control, leak checks, airing out, mail collection).</li><li>Post-storm watch: Systematic visit after every storm or strong wind on the Bassin (roof check, garden inspection).</li><li>Contractor management: Welcoming and overseeing outside service providers after a visit (gardener, pool technician, tradespeople, etc.).</li><li>Reporting: Update by SMS or email (report + digital photos) if anything unusual occurs.</li></ul>',
+      'acc7-summary': 'Concierge Service ("The Luxe")',
+      'acc7-body': '<ul class="doc-list"><li>Per-visit package for full property set-up before arrival: <span class="price-badge">€85 to €140</span><br><em>Opening the shutters, turning on heating/air conditioning, setting up outdoor furniture, custom welcome grocery list (purchases billed at cost against receipts).</em><br><em>Closing: Full property security after departure — checking installations, cutting off supplies if required, closing everything up, arming the alarm and securing the shutters.</em></li><li>Emergency call-out package, per visit (Daytime): <span class="price-badge">€100 + €40 / hour</span></li><li><em>Depending on the time of year, rapid response following an alarm trigger, suspected break-in, technical issue, bad weather, etc.</em></li></ul>',
+      'acc8-summary': 'Technical Services (on request)',
+      'acc8-body': '<p>These services are billed in addition to the base package.</p><ul class="doc-list"><li>Cleaning and upkeep charged by the hour: <span class="price-badge">€35 to €40</span><br><em>Thorough cleaning before/after a stay, care of fine materials (marble, parquet, terraces).</em></li></ul><p class="doc-underline">Any specific request can be quoted as a custom fixed-price proposal.</p>'
+    }
+  };
+
+  var originals = {};
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    originals[el.dataset.i18n] = el.textContent;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+    originals[el.dataset.i18nHtml] = el.innerHTML;
+  });
+
+  var currentLang = localStorage.getItem('bv-lang') || 'fr';
+
+  function applyLang(lang) {
+    var dict = lang === 'en' ? translations.en : null;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.dataset.i18n;
+      el.textContent = dict ? dict[key] : originals[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      var key = el.dataset.i18nHtml;
+      el.innerHTML = dict ? dict[key] : originals[key];
+    });
+    document.documentElement.lang = lang;
+    langToggleBtn.textContent = lang === 'en' ? 'FR' : 'EN';
+    currentLang = lang;
+    localStorage.setItem('bv-lang', lang);
+  }
+
+  var langToggleBtn = document.getElementById('lang-toggle');
+  langToggleBtn.addEventListener('click', function () {
+    applyLang(currentLang === 'en' ? 'fr' : 'en');
+  });
+
+  applyLang(currentLang);
 </script>
 
 </body>
