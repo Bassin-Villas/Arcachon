@@ -40,7 +40,7 @@ body {
 /* Pages de prestations (texte dense) : image plus grande pour une police
    plus lisible sans zoomer, toujours à l'échelle (pas de déformation). */
 .poster-doc {
-  max-width: min(760px, 94vw);
+  max-width: min(912px, 98vw);
 }
 
 .cta {
@@ -79,6 +79,6 @@ body {
   }
 
   .poster-doc {
-    max-width: min(600px, 92vw);
+    max-width: min(720px, 96vw);
   }
 }
