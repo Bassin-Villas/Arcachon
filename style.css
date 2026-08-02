@@ -37,20 +37,6 @@ body {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
-/* Pages de prestations (texte dense) : image quasi pleine largeur (proche
-   de sa résolution native 1080px) pour un texte lisible sans zoomer,
-   toujours à l'échelle (pas de déformation, pas de recadrage). Marges
-   réduites sur ces pages pour laisser le plus de place possible à l'image. */
-.hero:has(.poster-doc) {
-  min-height: auto;
-  justify-content: flex-start;
-  padding: 2vh 2vw;
-}
-
-.poster-doc {
-  max-width: min(1080px, 98vw);
-}
-
 .cta {
   display: inline-block;
   padding: 0.7rem 1.6rem;
@@ -73,6 +59,74 @@ body {
   gap: 1rem;
 }
 
+/* Pages de prestations : contenu retranscrit en vrai texte HTML,
+   header/footer d'origine gardés en image. Lisible sans zoomer sur
+   n'importe quel écran, contrairement à une image tout-en-un. */
+.doc-page {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fdfcf8;
+  min-height: 100vh;
+}
+
+.doc-strip {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.doc-body {
+  padding: 1.5rem 6vw 2.5rem;
+}
+
+.doc-body h2 {
+  color: #1b3f7a;
+  font-size: 1.3rem;
+  margin: 1.6rem 0 0.6rem;
+}
+
+.doc-body h2:first-child {
+  margin-top: 0.4rem;
+}
+
+.doc-intro {
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+
+.doc-body p {
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+.doc-subhead {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.doc-list {
+  list-style: none;
+  margin: 0.4rem 0 1rem;
+}
+
+.doc-list li {
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+  padding-left: 0.2rem;
+}
+
+.doc-center {
+  text-align: center;
+}
+
+.doc-underline {
+  text-decoration: underline;
+}
+
+.doc-nav {
+  padding: 1.5rem 6vw 2rem;
+}
+
 /* Sur mobile (écran étroit/haut), la photo panoramique ne correspond pas au
    format de l'écran : on utilise une variante recomposée en format portrait
    (ciel/mer prolongés au-dessus et en dessous) pour un vrai fond plein écran,
@@ -84,9 +138,5 @@ body {
 
   .poster {
     max-width: min(448px, 72vw);
-  }
-
-  .poster-doc {
-    max-width: min(1080px, 98vw);
   }
 }
