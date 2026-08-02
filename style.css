@@ -52,20 +52,60 @@ body {
   background: #2a5a9e;
 }
 
-.nav-row {
+/* Navigation par onglets : une seule page, le fond plein écran ne se
+   recharge jamais, seul le contenu du panneau actif change. */
+.tabs-hero {
+  justify-content: flex-start;
+  padding: 3vh 3vw;
+  gap: 1.2rem;
+}
+
+.tab-bar {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 900px;
 }
 
-/* Pages de prestations : contenu retranscrit en vrai texte HTML,
-   header/footer d'origine gardés en image. Lisible sans zoomer sur
-   n'importe quel écran, contrairement à une image tout-en-un. Le fond
-   plein écran (.hero) reste visible autour de la carte de contenu. */
-.hero:has(.doc-page) {
-  justify-content: flex-start;
-  padding: 3vh 3vw;
+.tab-btn {
+  font-family: inherit;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  color: #1b3f7a;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.tab-btn.active {
+  background: #1b3f7a;
+  color: #fff;
+}
+
+.tab-panel {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.tab-panel.active {
+  display: flex;
+}
+
+button.cta {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
 }
 
 .doc-page {
@@ -130,10 +170,6 @@ body {
 
 .doc-underline {
   text-decoration: underline;
-}
-
-.doc-nav {
-  padding: 1.5rem 6vw 2rem;
 }
 
 /* Sur mobile (écran étroit/haut), la photo panoramique ne correspond pas au

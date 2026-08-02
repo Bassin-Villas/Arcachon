@@ -8,12 +8,156 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main class="hero">
-  <img class="poster" src="assets/accueil.jpg" alt="Bassin-Villas — Conciergerie, prestation de services. Vue de la dune du Pyla et du Bassin d'Arcachon.">
+<main class="hero tabs-hero">
 
-  <h1 class="sr-only">Bassin-Villas — Conciergerie, prestation de services</h1>
+  <nav class="tab-bar">
+    <button class="tab-btn active" data-tab="accueil">Accueil</button>
+    <button class="tab-btn" data-tab="services">Services</button>
+    <button class="tab-btn" data-tab="intendance">Intendance</button>
+    <button class="tab-btn" data-tab="intendance-suite">Intendance (suite)</button>
+  </nav>
 
-  <a class="cta" href="services-conciergerie.html">Nos prestations &amp; tarifs</a>
+  <div class="tab-panel active" id="accueil">
+    <img class="poster" src="assets/accueil.jpg" alt="Bassin-Villas — Conciergerie, prestation de services. Vue de la dune du Pyla et du Bassin d'Arcachon.">
+    <h1 class="sr-only">Bassin-Villas — Conciergerie, prestation de services</h1>
+    <button class="cta tab-jump" data-tab="services">Nos prestations &amp; tarifs</button>
+  </div>
+
+  <div class="tab-panel" id="services">
+    <div class="doc-page">
+      <img class="doc-strip" src="assets/services-header.jpg" alt="Bassin-Villas — Services de Conciergerie, tarifs et prestations de gestion locative">
+
+      <div class="doc-body">
+        <h2>1. Notre Formule "Gestion Complète" (Clé en main)</h2>
+        <p class="doc-intro"><em>La solution idéale pour déléguer 100% et maximiser vos revenus locatifs l'esprit serein.</em></p>
+        <p>Notre Commission : <strong>20 % TTC</strong> <em>(Calculée uniquement sur le montant des revenus locatifs générés)</em></p>
+        <p>Ce qui est inclus dans notre formule :</p>
+        <ul class="doc-list">
+          <li>📷 Valorisation du bien : Shooting photo et rédaction d'une annonce optimisée.</li>
+          <li>🌐 Multi-diffusion : Publication et synchronisation des calendriers sur les plateformes leaders (Airbnb, Booking.com, Abritel).</li>
+          <li>📈 Yield Management : Optimisation dynamique des prix en fonction de la saisonnalité et des événements locaux.</li>
+          <li>💬 Relation voyageurs 7j/7 : Gestion des réservations, réponses aux questions et assistance pendant le séjour.</li>
+          <li>🔑 Accueil et Départ : Gestion des entrées (physiques ou connectées) et check-out avec contrôle du bien.</li>
+          <li>🧺 Coordination du ménage : Planification du ménage professionnel et de la blanchisserie entre chaque voyageur.</li>
+        </ul>
+
+        <h2>2. Nos Prestations « A la Carte »</h2>
+        <p class="doc-intro"><em>Vous gérez vos annonces à distance et souhaitez un relais de confiance sur place ? Choisissez nos services au forfait.</em></p>
+
+        <p class="doc-subhead">Accueil &amp; Logistique</p>
+        <ul class="doc-list">
+          <li><strong>Check-in seul</strong> (Remise des clés + livret d'accueil) : à partir de 35 €</li>
+          <li><strong>Check-out seul</strong> (Contrôle du bien + récupération des clés) : à partir de 30 €</li>
+          <li><strong>Pack Accueil &amp; Départ</strong> (Le même jour) : à partir de 60 €</li>
+          <li><strong>Intervention d'urgence / Dépannage</strong> (Hors coût des pièces) : 45 € / heure</li>
+        </ul>
+
+        <p class="doc-subhead">Ménage &amp; Blanchisserie</p>
+        <p class="doc-intro"><em>Les tarifs varient selon la superficie du logement (Studio à Villa).</em></p>
+        <ul class="doc-list">
+          <li><strong>Forfait Ménage Professionnel</strong> : de 50 € à 150 € <em>(Frais généralement imputés au voyageur)</em></li>
+          <li><strong>Location de linge</strong> (Kit lit double + serviettes) : 27 € / lit par séjour</li>
+          <li><strong>Veille / Gardiennage basse saison</strong> (2 visites mensuelles) : 80 € / mois</li>
+        </ul>
+      </div>
+
+      <img class="doc-strip" src="assets/services-footer.jpg" alt="Bassin-Villas — PARRAT Stéphane, 30 rue Aimé Bourdier 33120 Arcachon, Bassin.villas@gmail.com, 06 38 22 82 82, SIRET 944 129 840 00012 — APE 9609Z">
+    </div>
+  </div>
+
+  <div class="tab-panel" id="intendance">
+    <div class="doc-page">
+      <img class="doc-strip" src="assets/intendance-header.jpg" alt="Bassin-Villas — Proposition d'intendance et vigilance immobilière villas">
+
+      <div class="doc-body">
+        <h2 class="doc-center">Pourquoi choisir ma prestation ?</h2>
+        <ul class="doc-list">
+          <li>Ancrage Local : Résident à Arcachon, proximité immédiate et intervention rapide.</li>
+          <li>Expérience opérationnelle : maîtrise de la gestion de copropriété et de volumes importants</li>
+        </ul>
+
+        <h2 class="doc-center">La Surveillance et Vigilance (Le cœur du contrat)</h2>
+        <ul class="doc-list">
+          <li>Passages réguliers : 1 à 2 fois par semaine pour vérifier l'état général (intérieur/extérieur).</li>
+          <li>Après intempéries : Passage systématique après un coup de vent ou un gros orage (très fréquent sur le Bassin) pour vérifier les toitures, les baies vitrées et les infiltrations.</li>
+          <li>Aération : Ouvrir les fenêtres pour éviter l'humidité et l'odeur de « renfermé » typique des maisons de bord de mer.</li>
+          <li>Relevé du courrier : Réexpédition ou traitement des factures/avis urgents.</li>
+        </ul>
+
+        <h2 class="doc-center">La Gestion de la Maintenance (Le « Chef d'orchestre »)</h2>
+        <ul class="doc-list">
+          <li>Suivi des contrats : Entreprises espaces verts, jardinage / Suivi entretien pisciniste, Maintenance sécurité et protection (Entreprises d'alarme) etc.</li>
+          <li>Accueil des artisans : Ouverture de la porte, surveillance des travaux de réparation et vérification du chantier avant le départ de l'artisan.</li>
+          <li>Petite maintenance : Changement d'une ampoule, vérification du bon fonctionnement du chauffage avant l'hiver. <em>(Devis sur demande)</em></li>
+        </ul>
+      </div>
+
+      <img class="doc-strip" src="assets/intendance-footer.jpg" alt="Bassin-Villas — PARRAT Stéphane, 30 rue Aimé Bourdier 33120 Arcachon, Bassin.villas@gmail.com, 06 38 22 82 82, SIRET 944 129 840 00012 — APE 9609Z">
+    </div>
+  </div>
+
+  <div class="tab-panel" id="intendance-suite">
+    <div class="doc-page">
+      <img class="doc-strip" src="assets/intendance-suite-header.jpg" alt="Bassin-Villas — Proposition d'intendance et vigilance immobilière villas, tarifs">
+
+      <div class="doc-body">
+        <h2 class="doc-center">Forfait base Mensuel « Sérénité &amp; Vigilance »</h2>
+        <p>Tarif mensuel indicatif basé sur la superficie du bien : <strong>450 € à 650 €</strong></p>
+        <p>Ce forfait fixe garantit la sécurité et le maintien en état du patrimoine tout au long de l'année.</p>
+        <ul class="doc-list">
+          <li>Vigilance hebdomadaire : Passage 1 fois par semaine (contrôle des accès, vérification des fuites, aération, relevé du courrier).</li>
+          <li>Vigilance post-intempéries : Passage systématique après chaque tempête ou fort coup de vent sur le Bassin (vérification toiture, ouverture jardin).</li>
+          <li>Gestion des intervenants : Accueil et contrôle des prestataires extérieurs suite intervention (jardinier, pisciniste, artisans ou autres).</li>
+          <li>Reporting : Compte-rendu par SMS ou mail (rapport + photos digitalisés) si événement particulier.</li>
+        </ul>
+
+        <h2 class="doc-center">Service de la conciergerie (Le « Luxe »)</h2>
+        <ul class="doc-list">
+          <li>Forfait par intervention pour la mise en service complète du bien avant arrivée : <strong>85 € à 140 €</strong>
+            <br><em>Ouverture des volets, mise en route chauffage/climatisation, mise en place mobilier extérieur, liste de courses de bienvenue sur mesure (montant des achats facturé au réel sur présentation de justificatifs).</em>
+            <br><em>Fermeture : Sécurisation intégrale du bien après départ — contrôle des installations, coupure des arrivées si requis, fermeture complète, activation de l'alarme et mise en protection des volets.</em>
+          </li>
+          <li>Forfait d'intervention d'urgence par déplacement (Jour) : <strong>100 € + 40 € / heure</strong></li>
+          <li><em>En fonction période annuelle, intervention rapide suite à déclenchement d'alarme, suspicion d'intrusion ou incident technique, intempéries etc.</em></li>
+        </ul>
+
+        <h2 class="doc-center">Prestations Techniques (à la demande)</h2>
+        <p>Ces prestations sont facturées en sus du forfait de base.</p>
+        <ul class="doc-list">
+          <li>Entretien et Nettoyage facturé à l'heure : <strong>35 € à 40 €</strong>
+            <br><em>Ménage approfondi avant/après séjour, entretien des matériaux nobles (marbre, parquets, terrasses).</em>
+          </li>
+        </ul>
+        <p class="doc-underline">Toute demande spécifique pourra faire l'objet d'une proposition tarifaire forfaitaire personnalisée.</p>
+      </div>
+
+      <img class="doc-strip" src="assets/intendance-suite-footer.jpg" alt="Bassin-Villas — PARRAT Stéphane, 30 rue Aimé Bourdier 33120 Arcachon, Bassin.villas@gmail.com, 06 38 22 82 82, SIRET 944 129 840 00012 — APE 9609Z">
+    </div>
+  </div>
+
 </main>
+
+<script>
+  function activateTab(name) {
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.tab === name);
+    });
+    document.querySelectorAll('.tab-panel').forEach(function (panel) {
+      panel.classList.toggle('active', panel.id === name);
+    });
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  document.querySelectorAll('.tab-btn, .tab-jump').forEach(function (el) {
+    el.addEventListener('click', function () {
+      activateTab(el.dataset.tab);
+      history.replaceState(null, '', '#' + el.dataset.tab);
+    });
+  });
+
+  var initial = window.location.hash.replace('#', '');
+  if (initial) activateTab(initial);
+</script>
+
 </body>
 </html>
