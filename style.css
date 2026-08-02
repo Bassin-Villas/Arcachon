@@ -285,4 +285,13 @@ button.cta {
   .poster {
     max-width: min(448px, 72vw);
   }
+
+  .tab-bar {
+    gap: 0.35rem;
+  }
+
+  .tab-btn {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.8rem;
+  }
 }
