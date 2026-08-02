@@ -61,12 +61,21 @@ body {
 
 /* Pages de prestations : contenu retranscrit en vrai texte HTML,
    header/footer d'origine gardés en image. Lisible sans zoomer sur
-   n'importe quel écran, contrairement à une image tout-en-un. */
+   n'importe quel écran, contrairement à une image tout-en-un. Le fond
+   plein écran (.hero) reste visible autour de la carte de contenu. */
+.hero:has(.doc-page) {
+  justify-content: flex-start;
+  padding: 3vh 3vw;
+}
+
 .doc-page {
   max-width: 900px;
+  width: 100%;
   margin: 0 auto;
   background: #fdfcf8;
-  min-height: 100vh;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 .doc-strip {
