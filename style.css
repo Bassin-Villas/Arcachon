@@ -42,6 +42,8 @@ body {
    toujours à l'échelle (pas de déformation, pas de recadrage). Marges
    réduites sur ces pages pour laisser le plus de place possible à l'image. */
 .hero:has(.poster-doc) {
+  min-height: auto;
+  justify-content: flex-start;
   padding: 2vh 2vw;
 }
 
