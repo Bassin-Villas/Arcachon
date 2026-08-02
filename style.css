@@ -197,20 +197,18 @@ button.cta {
 .accordion .accordion-body {
   padding: 0 1.1rem 1.1rem;
   display: flex;
+  flex-direction: column;
   gap: 1rem;
-  align-items: flex-start;
 }
 
 .accordion-img {
-  width: 110px;
-  height: 110px;
+  width: 100%;
+  height: 180px;
   object-fit: cover;
   border-radius: 8px;
-  flex-shrink: 0;
 }
 
 .accordion-text {
-  flex: 1;
   min-width: 0;
 }
 
@@ -219,12 +217,7 @@ button.cta {
 }
 
 @media (max-width: 560px) {
-  .accordion .accordion-body {
-    flex-direction: column;
-  }
-
   .accordion-img {
-    width: 100%;
     height: 130px;
   }
 }
