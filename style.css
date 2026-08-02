@@ -37,10 +37,16 @@ body {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
-/* Pages de prestations (texte dense) : image plus grande pour une police
-   plus lisible sans zoomer, toujours à l'échelle (pas de déformation). */
+/* Pages de prestations (texte dense) : image quasi pleine largeur (proche
+   de sa résolution native 1080px) pour un texte lisible sans zoomer,
+   toujours à l'échelle (pas de déformation, pas de recadrage). Marges
+   réduites sur ces pages pour laisser le plus de place possible à l'image. */
+.hero:has(.poster-doc) {
+  padding: 2vh 2vw;
+}
+
 .poster-doc {
-  max-width: min(912px, 98vw);
+  max-width: min(1080px, 98vw);
 }
 
 .cta {
@@ -79,6 +85,6 @@ body {
   }
 
   .poster-doc {
-    max-width: min(720px, 96vw);
+    max-width: min(1080px, 98vw);
   }
 }
