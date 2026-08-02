@@ -14,10 +14,6 @@ body {
   white-space: nowrap;
 }
 
-.banner {
-  display: none;
-}
-
 .hero {
   min-height: 100vh;
   display: flex;
@@ -33,19 +29,16 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Sur mobile (écran étroit/haut), "cover" rogne trop la photo panoramique :
-   on l'affiche entière en bannière au lieu de la mettre en fond plein écran. */
+/* Sur mobile (écran étroit/haut), la photo panoramique ne correspond pas au
+   format de l'écran : on utilise une variante recomposée en format portrait
+   (ciel/mer prolongés au-dessus et en dessous) pour un vrai fond plein écran. */
 @media (max-aspect-ratio: 4/5) {
-  .banner {
-    display: block;
-    width: 100%;
-    height: auto;
+  .hero {
+    background-image: linear-gradient(rgba(10, 20, 40, 0.15), rgba(10, 20, 40, 0.15)), url("assets/fond-mobile.jpg");
   }
 
-  .hero {
-    min-height: auto;
-    background-image: none;
-    background-color: #eaf1fc;
+  .poster {
+    max-width: min(448px, 72vw);
   }
 }
 
