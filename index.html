@@ -30,7 +30,7 @@
         <h1 class="doc-title">Services de Conciergerie</h1>
         <p class="doc-tagline">Tarifs et prestations de gestion locative</p>
 
-        <details class="accordion" open>
+        <details class="accordion">
           <summary>1. Notre Formule "Gestion Complète" (Clé en main)</summary>
           <div class="accordion-body">
             <img class="accordion-img" src="assets/icons/img-gestion-complete.jpg" alt="Boîte à clés sécurisée pour la remise des clés">
@@ -84,7 +84,7 @@
       <div class="doc-body">
         <h1 class="doc-title">Proposition d'Intendance &amp; Vigilance Immobilière Villas</h1>
 
-        <details class="accordion" open>
+        <details class="accordion">
           <summary>Pourquoi choisir ma prestation ?</summary>
           <div class="accordion-body">
             <img class="accordion-img" src="assets/icons/img-pourquoi-choisir.jpg" alt="Port de plaisance sur le Bassin d'Arcachon">
@@ -188,6 +188,9 @@
     });
     document.querySelectorAll('.tab-panel').forEach(function (panel) {
       panel.classList.toggle('active', panel.id === name);
+    });
+    document.querySelectorAll('.accordion').forEach(function (acc) {
+      acc.open = false;
     });
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
