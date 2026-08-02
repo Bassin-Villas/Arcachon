@@ -14,6 +14,10 @@ body {
   white-space: nowrap;
 }
 
+.banner {
+  display: none;
+}
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -27,6 +31,22 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* Sur mobile (écran étroit/haut), "cover" rogne trop la photo panoramique :
+   on l'affiche entière en bannière au lieu de la mettre en fond plein écran. */
+@media (max-aspect-ratio: 4/5) {
+  .banner {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .hero {
+    min-height: auto;
+    background-image: none;
+    background-color: #eaf1fc;
+  }
 }
 
 .credit {
