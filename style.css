@@ -29,19 +29,6 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Sur mobile (écran étroit/haut), la photo panoramique ne correspond pas au
-   format de l'écran : on utilise une variante recomposée en format portrait
-   (ciel/mer prolongés au-dessus et en dessous) pour un vrai fond plein écran. */
-@media (max-aspect-ratio: 4/5) {
-  .hero {
-    background-image: linear-gradient(rgba(10, 20, 40, 0.15), rgba(10, 20, 40, 0.15)), url("assets/fond-mobile.jpg");
-  }
-
-  .poster {
-    max-width: min(448px, 72vw);
-  }
-}
-
 .credit {
   position: fixed;
   bottom: 0.4rem;
@@ -77,4 +64,18 @@ body {
 
 .cta:hover {
   background: #2a5a9e;
+}
+
+/* Sur mobile (écran étroit/haut), la photo panoramique ne correspond pas au
+   format de l'écran : on utilise une variante recomposée en format portrait
+   (ciel/mer prolongés au-dessus et en dessous) pour un vrai fond plein écran,
+   et les cartes accueil/contact sont réduites de 20%. */
+@media (max-aspect-ratio: 4/5) {
+  .hero {
+    background-image: linear-gradient(rgba(10, 20, 40, 0.15), rgba(10, 20, 40, 0.15)), url("assets/fond-mobile.jpg");
+  }
+
+  .poster {
+    max-width: min(448px, 72vw);
+  }
 }
