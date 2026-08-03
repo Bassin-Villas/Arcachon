@@ -113,12 +113,12 @@ body {
 /* Desktop : logo + nom de la marque agrandis. */
 @media (min-aspect-ratio: 4/5) {
   .brand-logo {
-    width: 80px;
-    height: 80px;
+    width: 96px;
+    height: 96px;
   }
 
   .brand-text {
-    font-size: 1.15rem;
+    font-size: 1.38rem;
   }
 }
 
