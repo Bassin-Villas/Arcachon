@@ -13,15 +13,22 @@
 <body>
 <main class="hero tabs-hero">
 
-  <nav class="tab-bar">
-    <button class="tab-btn active" data-tab="accueil" data-i18n="tab-accueil">Accueil</button>
-    <button class="tab-btn" data-tab="conciergerie" data-i18n="tab-conciergerie">Conciergerie</button>
-    <button class="tab-btn" data-tab="intendance-villas" data-i18n="tab-intendance">Intendance Villas</button>
+  <div class="site-header">
+    <div class="brand">
+      <img class="brand-logo" src="assets/accueil.jpg" alt="Bassin-Villas">
+      <span class="brand-text" data-i18n-html="brand-text">Bassin-Villas<br>Conciergerie, prestation de services</span>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="accueil" data-i18n="tab-accueil">Accueil</button>
+      <button class="tab-btn" data-tab="conciergerie" data-i18n="tab-conciergerie">Conciergerie</button>
+      <button class="tab-btn" data-tab="intendance-villas" data-i18n="tab-intendance">Intendance Villas</button>
+    </nav>
+
     <button class="lang-btn" id="lang-toggle">EN</button>
-  </nav>
+  </div>
 
   <div class="tab-panel active" id="accueil">
-    <img class="poster-full" src="assets/accueil.jpg" alt="Bassin-Villas — Conciergerie, prestation de services. Vue de la dune du Pyla et du Bassin d'Arcachon.">
     <h1 class="sr-only" data-i18n="accueil-h1">Bassin-Villas — Conciergerie, prestation de services</h1>
   </div>
 
@@ -212,6 +219,7 @@
       'tab-conciergerie': 'Concierge',
       'tab-intendance': 'Villa Management',
       'accueil-h1': 'Bassin-Villas — Concierge, property services',
+      'brand-text': 'Bassin-Villas<br>Concierge, property services',
       'conciergerie-title': 'Concierge Services',
       'conciergerie-tagline': 'Rates and rental management services',
       'acc1-summary': '1. Our "Full Management" Package (Turnkey)',

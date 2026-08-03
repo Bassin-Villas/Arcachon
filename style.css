@@ -61,27 +61,53 @@ body {
   gap: 1.2rem;
 }
 
-.tab-bar {
+/* Barre d'en-tête : onglets à gauche, logo + nom de la marque à droite
+   (repère visuel permanent, présent sur tous les onglets). */
+.site-header {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   gap: 1rem;
   width: 100%;
-  max-width: 900px;
+  max-width: 1100px;
   position: relative;
   z-index: 2;
 }
 
-/* Onglet Accueil : l'image couvre tout l'écran, la barre d'onglets
-   reste visible par-dessus. */
-.poster-full {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
+.tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-logo {
+  width: 54px;
+  height: 54px;
   object-fit: cover;
-  object-position: top;
-  z-index: 1;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.brand-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #000000;
+  text-shadow:
+    -1px -1px 3px rgba(255, 255, 255, 0.8),
+    1px -1px 3px rgba(255, 255, 255, 0.8),
+    -1px 1px 3px rgba(255, 255, 255, 0.8),
+    1px 1px 3px rgba(255, 255, 255, 0.8);
 }
 
 .tab-btn {
