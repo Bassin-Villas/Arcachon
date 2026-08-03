@@ -387,7 +387,7 @@ button.cta {
 .hero.hero-accueil::after {
   inset: 0;
   background-image: linear-gradient(rgba(10, 20, 40, 0.15), rgba(10, 20, 40, 0.15)), url("assets/accueil-bg.jpg");
-  background-size: auto, contain;
+  background-size: auto, 100% 100%;
   background-position: center;
   z-index: -1;
 }
