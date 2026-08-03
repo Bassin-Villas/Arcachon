@@ -431,4 +431,11 @@ button.cta {
   .hero.hero-accueil::after {
     background-image: linear-gradient(rgba(10, 20, 40, 0.15), rgba(10, 20, 40, 0.15)), url("assets/accueil-bg-mobile.jpg");
   }
+
+  /* Le bouton Contact passe sur une 2e ligne en mobile : on réduit la marge
+     du haut d'autant pour que la page entière tienne dans un seul écran. */
+  .site-header {
+    margin-top: calc(52vh - 60px);
+    margin-top: calc(52dvh - 60px);
+  }
 }
