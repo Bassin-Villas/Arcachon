@@ -62,8 +62,8 @@ body {
   gap: 1.2rem;
 }
 
-/* Barre d'en-tête : les onglets, positionnés sous le texte de la photo de
-   fond de l'accueil (calcul indépendant du format de l'écran). */
+/* Barre d'en-tête : en haut de page sur les autres onglets, mais positionnée
+   sous le texte de la photo de fond quand l'onglet Accueil est actif. */
 .site-header {
   display: flex;
   flex-wrap: wrap;
@@ -72,10 +72,14 @@ body {
   gap: 1rem;
   width: 100%;
   max-width: 1400px;
-  margin-top: 52vh;
-  margin-top: 52dvh;
+  margin-top: 2.8rem;
   position: relative;
   z-index: 2;
+}
+
+.hero-accueil .site-header {
+  margin-top: 52vh;
+  margin-top: 52dvh;
 }
 
 .tab-bar {
@@ -434,7 +438,7 @@ button.cta {
 
   /* Le bouton Contact passe sur une 2e ligne en mobile : on réduit la marge
      du haut d'autant pour que la page entière tienne dans un seul écran. */
-  .site-header {
+  .hero-accueil .site-header {
     margin-top: calc(52vh - 60px);
     margin-top: calc(52dvh - 60px);
   }
