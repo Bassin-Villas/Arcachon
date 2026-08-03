@@ -17,6 +17,7 @@ body {
 
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,8 +62,8 @@ body {
   gap: 1.2rem;
 }
 
-/* Barre d'en-tête : onglets positionnés sous le texte de la photo de fond
-   (repère visuel permanent, présent sur tous les onglets). */
+/* Barre d'en-tête : les onglets, positionnés sous le texte de la photo de
+   fond de l'accueil (calcul indépendant du format de l'écran). */
 .site-header {
   display: flex;
   flex-wrap: wrap;
@@ -71,7 +72,8 @@ body {
   gap: 1rem;
   width: 100%;
   max-width: 1400px;
-  margin-top: 48vh;
+  margin-top: 52vh;
+  margin-top: 52dvh;
   position: relative;
   z-index: 2;
 }
@@ -352,9 +354,42 @@ button.cta {
   color: #9c1c2a;
 }
 
-/* Fond spécifique à la page Accueil (photo différente des autres onglets). */
+/* Fond de la page Accueil : la photo (avec logo et texte) est toujours
+   affichée entière (aucun rognage), un calque flou de la même image en
+   arrière-plan comble l'espace autour sans bandes de couleur unie. */
 .hero.hero-accueil {
-  background-image: linear-gradient(rgba(10, 20, 40, 0.2), rgba(10, 20, 40, 0.2)), url("assets/accueil.jpg");
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero.hero-accueil::before,
+.hero.hero-accueil::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+/* Calque du fond : version floutée de la photo, agrandie, pour combler
+   tout l'espace sans bandes de couleur unie. */
+.hero.hero-accueil::before {
+  inset: -30px;
+  background-image: url("assets/accueil-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(40px) brightness(0.85);
+  transform: scale(1.15);
+  z-index: -2;
+}
+
+/* Calque du premier plan : la photo entière (jamais rognée), par-dessus
+   le flou. */
+.hero.hero-accueil::after {
+  inset: 0;
+  background-image: linear-gradient(rgba(10, 20, 40, 0.15), rgba(10, 20, 40, 0.15)), url("assets/accueil-bg.jpg");
+  background-size: auto, contain;
+  background-position: center;
+  z-index: -1;
 }
 
 /* Sur mobile (écran étroit/haut), la photo panoramique ne correspond pas au
@@ -389,7 +424,11 @@ button.cta {
     margin: 0 auto;
   }
 
-  .site-header {
-    margin-top: 74vh;
+  .hero.hero-accueil::before {
+    background-image: url("assets/accueil-bg-mobile.jpg");
+  }
+
+  .hero.hero-accueil::after {
+    background-image: linear-gradient(rgba(10, 20, 40, 0.15), rgba(10, 20, 40, 0.15)), url("assets/accueil-bg-mobile.jpg");
   }
 }
