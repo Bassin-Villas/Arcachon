@@ -79,7 +79,7 @@ body {
   inset: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: contain;
+  object-fit: cover;
   z-index: 1;
 }
 
@@ -294,10 +294,6 @@ button.cta {
 
   .poster {
     max-width: min(448px, 72vw);
-  }
-
-  .poster-full {
-    object-fit: cover;
   }
 
   .tab-bar {
