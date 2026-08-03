@@ -80,54 +80,7 @@ body {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  object-position: center 70%;
   z-index: 1;
-}
-
-/* Titre superposé à l'image plein écran : taille en clamp() pour rester
-   lisible et proportionné à toutes les tailles d'écran, contrairement au
-   texte figé qui était incrusté dans l'ancienne image. */
-.hero-text {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-top: 8vh;
-  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.55);
-}
-
-.hero-icon {
-  width: clamp(48px, 9vw, 90px);
-  height: auto;
-  margin-bottom: 0.5rem;
-}
-
-.hero-title {
-  font-size: clamp(2.2rem, 8vw, 4.5rem);
-  font-weight: 700;
-  color: #1b3f7a;
-  line-height: 1;
-}
-
-.hero-subtitle {
-  font-size: clamp(1.1rem, 3.4vw, 1.8rem);
-  color: #000000;
-  margin-top: 0.6rem;
-  line-height: 1.35;
-}
-
-.hero-tagline {
-  position: fixed;
-  right: 4vw;
-  bottom: 3vh;
-  z-index: 2;
-  font-family: 'Caveat', cursive;
-  font-weight: 600;
-  font-size: clamp(1.1rem, 2.6vw, 1.5rem);
-  color: #1b3f7a;
-  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.6);
 }
 
 .tab-btn {
