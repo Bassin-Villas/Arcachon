@@ -439,7 +439,7 @@ button.cta {
   /* Le bouton Contact passe sur une 2e ligne en mobile : on réduit la marge
      du haut d'autant pour que la page entière tienne dans un seul écran. */
   .hero-accueil .site-header {
-    margin-top: calc(52vh - 60px);
-    margin-top: calc(52dvh - 60px);
+    margin-top: calc(52vh - 25px);
+    margin-top: calc(52dvh - 25px);
   }
 }
