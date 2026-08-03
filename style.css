@@ -343,4 +343,18 @@ button.cta {
     padding: 0.5rem 0.7rem;
     font-size: 0.8rem;
   }
+
+  .brand {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .brand-logo {
+    width: 65px;
+    height: 65px;
+  }
+
+  .brand-text {
+    font-size: 0.96rem;
+  }
 }
