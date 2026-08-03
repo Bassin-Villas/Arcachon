@@ -80,6 +80,7 @@ body {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+  object-position: center 70%;
   z-index: 1;
 }
 
