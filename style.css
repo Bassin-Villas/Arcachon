@@ -61,16 +61,17 @@ body {
   gap: 1.2rem;
 }
 
-/* Barre d'en-tête : onglets à gauche, logo + nom de la marque à droite
+/* Barre d'en-tête : onglets positionnés sous le texte de la photo de fond
    (repère visuel permanent, présent sur tous les onglets). */
 .site-header {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
   width: 100%;
   max-width: 1400px;
+  margin-top: 48vh;
   position: relative;
   z-index: 2;
 }
@@ -86,46 +87,6 @@ body {
   flex-basis: 0;
   width: 0;
   margin: 0;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.brand-logo {
-  width: 54px;
-  height: 54px;
-  object-fit: cover;
-  border-radius: 50%;
-  flex-shrink: 0;
-  border: 2px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-}
-
-.brand-text {
-  font-size: 0.8rem;
-  font-weight: 700;
-  line-height: 1.25;
-  color: #000000;
-  text-shadow:
-    -1px -1px 3px rgba(255, 255, 255, 0.8),
-    1px -1px 3px rgba(255, 255, 255, 0.8),
-    -1px 1px 3px rgba(255, 255, 255, 0.8),
-    1px 1px 3px rgba(255, 255, 255, 0.8);
-}
-
-/* Desktop : logo + nom de la marque agrandis. */
-@media (min-aspect-ratio: 4/5) {
-  .brand-logo {
-    width: 96px;
-    height: 96px;
-  }
-
-  .brand-text {
-    font-size: 1.38rem;
-  }
 }
 
 .tab-btn {
@@ -157,9 +118,13 @@ body {
   cursor: pointer;
   padding: 0.5rem 0.85rem;
   border-radius: 999px;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.55);
   color: #000000;
   transition: background 0.2s ease, color 0.2s ease;
+  position: fixed;
+  top: 0.8rem;
+  right: 0.8rem;
+  z-index: 3;
 }
 
 .lang-btn:hover {
@@ -387,6 +352,11 @@ button.cta {
   color: #9c1c2a;
 }
 
+/* Fond spécifique à la page Accueil (photo différente des autres onglets). */
+.hero.hero-accueil {
+  background-image: linear-gradient(rgba(10, 20, 40, 0.2), rgba(10, 20, 40, 0.2)), url("assets/accueil.jpg");
+}
+
 /* Sur mobile (écran étroit/haut), la photo panoramique ne correspond pas au
    format de l'écran : on utilise une variante recomposée en format portrait
    (ciel/mer prolongés au-dessus et en dessous) pour un vrai fond plein écran,
@@ -419,21 +389,7 @@ button.cta {
     margin: 0 auto;
   }
 
-  .lang-btn {
-    margin-left: auto;
-  }
-
-  .brand {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .brand-logo {
-    width: 65px;
-    height: 65px;
-  }
-
-  .brand-text {
-    font-size: 0.96rem;
+  .site-header {
+    margin-top: 74vh;
   }
 }

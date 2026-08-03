@@ -11,14 +11,9 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main class="hero tabs-hero">
+<main class="hero tabs-hero hero-accueil">
 
   <div class="site-header">
-    <div class="brand">
-      <img class="brand-logo" src="assets/accueil.jpg" alt="Bassin-Villas">
-      <span class="brand-text" data-i18n-html="brand-text">Bassin-Villas<br>Conciergerie, prestation de services</span>
-    </div>
-
     <nav class="tab-bar">
       <button class="tab-btn active" data-tab="accueil" data-i18n="tab-accueil">Accueil</button>
       <button class="tab-btn" data-tab="conciergerie" data-i18n="tab-conciergerie">Conciergerie</button>
@@ -26,9 +21,9 @@
       <span class="tab-break"></span>
       <button class="tab-btn tab-btn-contact" data-tab="contact" data-i18n="tab-contact">Contact</button>
     </nav>
-
-    <button class="lang-btn" id="lang-toggle">EN</button>
   </div>
+
+  <button class="lang-btn" id="lang-toggle">EN</button>
 
   <div class="tab-panel active" id="accueil">
     <h1 class="sr-only" data-i18n="accueil-h1">Bassin-Villas — Conciergerie, prestation de services</h1>
@@ -236,6 +231,7 @@
     document.querySelectorAll('.tab-panel').forEach(function (panel) {
       panel.classList.toggle('active', panel.id === name);
     });
+    document.querySelector('.hero').classList.toggle('hero-accueil', name === 'accueil');
     document.querySelectorAll('.accordion').forEach(function (acc) {
       acc.open = false;
     });
@@ -347,14 +343,17 @@
       el.innerHTML = dict ? dict[key] : originals[key];
     });
     document.documentElement.lang = lang;
-    langToggleBtn.textContent = lang === 'en' ? 'FR' : 'EN';
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      btn.textContent = lang === 'en' ? 'FR' : 'EN';
+    });
     currentLang = lang;
     localStorage.setItem('bv-lang', lang);
   }
 
-  var langToggleBtn = document.getElementById('lang-toggle');
-  langToggleBtn.addEventListener('click', function () {
-    applyLang(currentLang === 'en' ? 'fr' : 'en');
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      applyLang(currentLang === 'en' ? 'fr' : 'en');
+    });
   });
 
   applyLang(currentLang);
