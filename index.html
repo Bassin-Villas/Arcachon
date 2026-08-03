@@ -7,7 +7,7 @@
 <meta name="description" content="Bassin-Villas, conciergerie et prestation de services sur le Bassin d'Arcachon. Votre confiance, mon exigence.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,8 +21,19 @@
   </nav>
 
   <div class="tab-panel active" id="accueil">
-    <img class="poster-full" src="assets/accueil.jpg" alt="Bassin-Villas — Conciergerie, prestation de services. Vue de la dune du Pyla et du Bassin d'Arcachon.">
-    <h1 class="sr-only" data-i18n="accueil-h1">Bassin-Villas — Conciergerie, prestation de services</h1>
+    <img class="poster-full" src="assets/accueil-fond.jpg" alt="Vue de la dune du Pyla et du Bassin d'Arcachon.">
+    <div class="hero-text">
+      <svg class="hero-icon" viewBox="0 0 100 60" aria-hidden="true">
+        <polyline points="10,42 45,42 62,15 68,24 84,42" fill="none" stroke="#1b3f7a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="70" y="28" width="7" height="7" fill="#1b3f7a"/>
+      </svg>
+      <h1 class="hero-title" data-i18n="accueil-h1">Bassin-Villas</h1>
+      <p class="hero-subtitle">
+        <span data-i18n="accueil-sub1">Conciergerie</span><br>
+        <span data-i18n="accueil-sub2">Prestation de services</span>
+      </p>
+    </div>
+    <p class="hero-tagline" data-i18n="accueil-tagline">Votre confiance, mon exigence.</p>
   </div>
 
   <div class="tab-panel" id="conciergerie">
@@ -211,7 +222,10 @@
       'tab-accueil': 'Home',
       'tab-conciergerie': 'Concierge',
       'tab-intendance': 'Villa Management',
-      'accueil-h1': 'Bassin-Villas — Concierge, property services',
+      'accueil-h1': 'Bassin-Villas',
+      'accueil-sub1': 'Concierge services',
+      'accueil-sub2': 'Property services',
+      'accueil-tagline': 'Your trust, my commitment.',
       'conciergerie-title': 'Concierge Services',
       'conciergerie-tagline': 'Rates and rental management services',
       'acc1-summary': '1. Our "Full Management" Package (Turnkey)',
