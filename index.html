@@ -23,6 +23,7 @@
       <button class="tab-btn active" data-tab="accueil" data-i18n="tab-accueil">Accueil</button>
       <button class="tab-btn" data-tab="conciergerie" data-i18n="tab-conciergerie">Conciergerie</button>
       <button class="tab-btn" data-tab="intendance-villas" data-i18n="tab-intendance">Intendance Villas</button>
+      <button class="tab-btn" data-tab="contact" data-i18n="tab-contact">Contact</button>
     </nav>
 
     <button class="lang-btn" id="lang-toggle">EN</button>
@@ -187,6 +188,43 @@
     </div>
   </div>
 
+  <div class="tab-panel" id="contact">
+    <div class="doc-page">
+      <div class="doc-body">
+        <h1 class="doc-title" data-i18n="contact-title">Bassin-Villas</h1>
+        <p class="doc-tagline" data-i18n="contact-phone">Tél : 06 38 22 82 82</p>
+        <p class="doc-tagline" data-i18n="contact-email">bassin.villas@gmail.com</p>
+
+        <details class="accordion" id="contact-accordion">
+          <summary data-i18n="contact-summary">Nous contacter</summary>
+          <div class="accordion-body accordion-body-form">
+            <form id="contact-form" class="contact-form">
+              <input type="hidden" name="access_key" value="2e6fceda-72e9-4bb9-b3e9-abe3e7ad0d49">
+              <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off">
+
+              <label for="contact-name" data-i18n="label-name">Nom</label>
+              <input type="text" id="contact-name" name="name" required>
+
+              <label for="contact-email" data-i18n="label-email">Email</label>
+              <input type="email" id="contact-email" name="email" required>
+
+              <label for="contact-phone" data-i18n="label-phone">Téléphone</label>
+              <input type="tel" id="contact-phone" name="phone">
+
+              <label for="contact-message" data-i18n="label-message">Message</label>
+              <textarea id="contact-message" name="message" rows="5" required></textarea>
+
+              <button type="submit" class="cta" data-i18n="btn-send">Envoyer</button>
+            </form>
+          </div>
+        </details>
+
+        <p id="contact-success" class="contact-feedback contact-success" data-i18n="contact-success">Merci, votre message a bien été envoyé !</p>
+        <p id="contact-error" class="contact-feedback contact-error" data-i18n="contact-error">Une erreur est survenue. Réessayez ou appelez-nous directement.</p>
+      </div>
+    </div>
+  </div>
+
 </main>
 
 <script>
@@ -213,6 +251,39 @@
   var initial = window.location.hash.replace('#', '');
   if (initial) activateTab(initial);
 
+  var contactForm = document.getElementById('contact-form');
+  var contactSuccess = document.getElementById('contact-success');
+  var contactError = document.getElementById('contact-error');
+
+  contactForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    contactSuccess.classList.remove('visible');
+    contactError.classList.remove('visible');
+
+    var submitBtn = contactForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(contactForm)
+    })
+      .then(function (response) { return response.json(); })
+      .then(function (data) {
+        submitBtn.disabled = false;
+        if (data.success) {
+          contactForm.reset();
+          contactSuccess.classList.add('visible');
+        } else {
+          contactError.classList.add('visible');
+        }
+      })
+      .catch(function () {
+        submitBtn.disabled = false;
+        contactError.classList.add('visible');
+      });
+  });
+
   var translations = {
     en: {
       'tab-accueil': 'Home',
@@ -238,7 +309,19 @@
       'acc7-summary': 'Concierge Service ("The Luxe")',
       'acc7-body': '<ul class="doc-list"><li>Per-visit package for full property set-up before arrival: <span class="price-badge">€85 to €140</span><br><em>Opening the shutters, turning on heating/air conditioning, setting up outdoor furniture, custom welcome grocery list (purchases billed at cost against receipts).</em><br><em>Closing: Full property security after departure — checking installations, cutting off supplies if required, closing everything up, arming the alarm and securing the shutters.</em></li><li>Emergency call-out package, per visit (Daytime): <span class="price-badge">€100 + €40 / hour</span></li><li><em>Depending on the time of year, rapid response following an alarm trigger, suspected break-in, technical issue, bad weather, etc.</em></li></ul>',
       'acc8-summary': 'Technical Services (on request)',
-      'acc8-body': '<p>These services are billed in addition to the base package.</p><ul class="doc-list"><li>Cleaning and upkeep charged by the hour: <span class="price-badge">€35 to €40</span><br><em>Thorough cleaning before/after a stay, care of fine materials (marble, parquet, terraces).</em></li></ul><p class="doc-underline">Any specific request can be quoted as a custom fixed-price proposal.</p>'
+      'acc8-body': '<p>These services are billed in addition to the base package.</p><ul class="doc-list"><li>Cleaning and upkeep charged by the hour: <span class="price-badge">€35 to €40</span><br><em>Thorough cleaning before/after a stay, care of fine materials (marble, parquet, terraces).</em></li></ul><p class="doc-underline">Any specific request can be quoted as a custom fixed-price proposal.</p>',
+      'tab-contact': 'Contact',
+      'contact-title': 'Bassin-Villas',
+      'contact-phone': 'Phone: 06 38 22 82 82',
+      'contact-email': 'bassin.villas@gmail.com',
+      'contact-summary': 'Contact us',
+      'label-name': 'Name',
+      'label-email': 'Email',
+      'label-phone': 'Phone',
+      'label-message': 'Message',
+      'btn-send': 'Send',
+      'contact-success': 'Thank you, your message has been sent!',
+      'contact-error': 'Something went wrong. Please try again or call us directly.'
     }
   };
 
