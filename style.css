@@ -110,6 +110,18 @@ body {
     1px 1px 3px rgba(255, 255, 255, 0.8);
 }
 
+/* Desktop : logo + nom de la marque agrandis. */
+@media (min-aspect-ratio: 4/5) {
+  .brand-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .brand-text {
+    font-size: 1.15rem;
+  }
+}
+
 .tab-btn {
   font-family: inherit;
   font-size: 0.95rem;
